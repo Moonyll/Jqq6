@@ -48,3 +48,74 @@
     </script>
 </body>
 </html>
+Corrigé :
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title></title>
+</head>
+<body>
+    <div id="text">
+        <p>
+            Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire internationale, en 2007-2008, ce voilier est utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre de l'expédition Tara Oceans, Tara parcourt les mers et les océans dans une circumnavigation de trois ans afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific dont l'objectif est de comprendre le corail, menacé par des facteurs humains et climatiques1.
+        </p>
+    </div>
+    <div class="colors">
+        <div class="color green" id="green"></div>
+        <div class="color red" id="red"></div>
+        <div class="color blue" id="blue"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.color').mouseover(function () {
+                var mycolor = $(this).attr('id');
+                $('#text').css('color', mycolor);
+            });
+            $('.color').mouseout(function () {
+                mycolor = $(this).attr('id');
+                $('#text').css('color', 'black');
+            });
+            /*méthode 2:
+            $('.color').mouseover(function () {
+                var mycolor = $(this).attr('id');
+                $('#text').css('color', mycolor);
+            }).mouseout(function () {
+                mycolor = $(this).attr('id');
+                $('#text').css('color', 'black');
+            });
+            méthode 3:
+            $("#green").hover(function () {
+                $("#text").css("color", "green");
+            }, function () {
+                $("#text").css("color", "black");
+            });
+            $("#red").hover(function () {
+                $("#text").css("color", "red");
+            }, function () {
+                $("#text").css("color", "black");
+            });
+            $("#blue").hover(function () {
+                $("#text").css("color", "blue");
+            }, function () {
+                $("#text").css("color", "black");
+            });
+            méthode 4:
+            $(".color").on({
+                mouseenter: function () {
+                    var color = $(this).attr("id");
+                    $("#text").css("color", color);
+                },
+                mouseleave: function () {
+                    $("#text").css("color", "initial");
+                }
+            });*/
+        });
+    </script>
+</body>
+</html>
+
